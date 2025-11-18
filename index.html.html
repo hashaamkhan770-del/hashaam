@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashaam - AI Web Developer & Video Editor</title>
+    <title>Hashi Studio - AI Web Developer & Video Editor</title>
     <meta name="description" content="Professional AI-powered web development and video editing services. Helping businesses automate, scale, and engage audiences.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -21,13 +21,22 @@
             color: #e8e8e8;
             background: #0a0a0a;
             overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        * {
             scroll-behavior: smooth;
         }
 
         .fade-in {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(60px);
+            transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .fade-in.visible {
@@ -37,13 +46,14 @@
 
         .scale-in {
             opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: scale(0.9) translateY(30px);
+            transition: opacity 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        transform 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .scale-in.visible {
             opacity: 1;
-            transform: scale(1);
+            transform: scale(1) translateY(0);
         }
 
         .bg-icons {
@@ -88,7 +98,7 @@
             align-items: center;
             z-index: 1000;
             border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-            transition: all 0.3s ease;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         nav.scrolled {
@@ -121,7 +131,7 @@
             text-decoration: none;
             color: #e8e8e8;
             font-weight: 500;
-            transition: all 0.3s;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-size: 0.9rem;
             letter-spacing: 1px;
             position: relative;
@@ -135,7 +145,7 @@
             width: 0;
             height: 2px;
             background: linear-gradient(90deg, #d4af37, #f4e5a1);
-            transition: width 0.3s ease;
+            transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         nav a:hover::after {
@@ -198,7 +208,7 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            transition: all 0.4s ease;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             margin-top: 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -250,11 +260,11 @@
 
         .stat-item {
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .stat-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
 
         .stat-number {
@@ -287,16 +297,16 @@
             overflow: hidden;
             background: #111;
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
             aspect-ratio: 16/9;
             border-radius: 12px;
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
-            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.5);
         }
 
         .portfolio-item iframe,
@@ -319,7 +329,7 @@
             justify-content: flex-end;
             padding: 2rem;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .portfolio-item:hover .portfolio-overlay {
@@ -367,13 +377,13 @@
             background: rgba(10, 10, 10, 0.6);
             border-radius: 12px;
             border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .result-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
         }
 
         .result-number {
@@ -388,6 +398,153 @@
 
         .result-card p {
             color: #999;
+            font-size: 0.95rem;
+        }
+
+        /* CLIENT CONFESSIONS SECTION */
+        .confessions-section {
+            background: rgba(17, 17, 17, 0.5);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            margin: 5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .confessions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .confession-item {
+            position: relative;
+            overflow: hidden;
+            background: #111;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            aspect-ratio: 9/16;
+        }
+
+        .confession-item:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.4);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .confession-item iframe,
+        .confession-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+        }
+
+        .confession-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, transparent 100%);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .confession-item:hover .confession-overlay {
+            transform: translateY(0);
+        }
+
+        .confession-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 0.3rem;
+        }
+
+        .confession-company {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            background: rgba(17, 17, 17, 0.5);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            margin: 5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateX(5px);
+        }
+
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .faq-question:hover {
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #e8e8e8;
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: #d4af37;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        padding 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2rem 2rem 2rem;
+        }
+
+        .faq-answer p {
+            color: #999;
+            line-height: 1.8;
             font-size: 0.95rem;
         }
 
@@ -407,12 +564,13 @@
             padding: 2.5rem;
             border-radius: 12px;
             border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .testimonial:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
         }
 
         .testimonial-text {
@@ -475,19 +633,21 @@
             border: 2px solid rgba(212, 175, 55, 0.2);
             border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-align: center;
         }
 
         .service-option:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
         }
 
         .service-option.active {
             border-color: #d4af37;
             background: rgba(212, 175, 55, 0.1);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+            transform: scale(1.03);
         }
 
         .service-option i {
@@ -541,7 +701,7 @@
             color: #e8e8e8;
             font-size: 1rem;
             font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border-radius: 8px;
         }
 
@@ -549,7 +709,8 @@
             outline: none;
             border-color: #d4af37;
             background: rgba(17, 17, 17, 1);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
         }
 
         textarea {
@@ -567,7 +728,7 @@
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-transform: uppercase;
             letter-spacing: 2px;
             border-radius: 50px;
@@ -580,8 +741,8 @@
         }
 
         button[type="submit"]:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.6);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(212, 175, 55, 0.7);
         }
 
         footer {
@@ -602,7 +763,7 @@
             color: #888;
             text-decoration: none;
             font-size: 1.3rem;
-            transition: all 0.3s ease;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             width: 45px;
             height: 45px;
             display: flex;
@@ -615,8 +776,8 @@
         .social-links a:hover {
             color: #d4af37;
             border-color: #d4af37;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
         }
 
         .success-message {
@@ -658,6 +819,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .confessions-grid {
+                grid-template-columns: 1fr;
+            }
+
             section {
                 padding: 4rem 5%;
             }
@@ -689,19 +854,20 @@
     <nav id="navbar">
         <div class="logo">
             <i class="fas fa-bolt"></i>
-            HASHAAM
+            HASHI STUDIO
         </div>
         <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#video-portfolio">Videos</a></li>
             <li><a href="#web-portfolio">Web Dev</a></li>
-            <li><a href="#results">Results</a></li>
+            <li><a href="#confessions">Confessions</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#hire">Hire Me</a></li>
         </ul>
     </nav>
 
     <section id="hero">
-        <h1>HASHAAM</h1>
+        <h1>HASHI STUDIO</h1>
         <p class="subtitle">AI Web Developer • Video Editor</p>
         <div class="stats">
             <div class="stat-item">
@@ -723,12 +889,10 @@
         </a>
     </section>
 
-    <!-- DEMO SECTION - Replace with YOUR Loom videos -->
     <div class="demo-section fade-in">
         <h2>See My Work In Action</h2>
         <p class="section-subtitle">60-Second Portfolio Walkthrough</p>
         <div class="demo-video">
-            <!-- REPLACE THIS with your Loom video embed -->
             <iframe src="https://www.loom.com/embed/YOUR_LOOM_VIDEO_ID" allowfullscreen></iframe>
         </div>
         <p class="demo-description">Quick demo of my AI chatbot system that saved a client 15 hours/week</p>
@@ -739,7 +903,6 @@
         <p class="section-subtitle fade-in">Professional Visual Storytelling</p>
 
         <div class="portfolio-grid">
-            <!-- VIDEO 1 - REPLACE with your actual YouTube video -->
             <div class="portfolio-item scale-in">
                 <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" allowfullscreen></iframe>
                 <div class="portfolio-overlay">
@@ -749,7 +912,6 @@
                 </div>
             </div>
 
-            <!-- VIDEO 2 -->
             <div class="portfolio-item scale-in">
                 <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" allowfullscreen></iframe>
                 <div class="portfolio-overlay">
@@ -759,7 +921,6 @@
                 </div>
             </div>
 
-            <!-- VIDEO 3 -->
             <div class="portfolio-item scale-in">
                 <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" allowfullscreen></iframe>
                 <div class="portfolio-overlay">
@@ -769,7 +930,6 @@
                 </div>
             </div>
 
-            <!-- VIDEO 4 -->
             <div class="portfolio-item scale-in">
                 <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" allowfullscreen></iframe>
                 <div class="portfolio-overlay">
@@ -786,7 +946,6 @@
         <p class="section-subtitle fade-in">Intelligent Websites That Convert</p>
 
         <div class="portfolio-grid">
-            <!-- WEB PROJECT 1 - REPLACE with screenshots of YOUR work -->
             <div class="portfolio-item scale-in">
                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop" alt="AI Chatbot Integration">
                 <div class="portfolio-overlay">
@@ -796,7 +955,6 @@
                 </div>
             </div>
 
-            <!-- WEB PROJECT 2 -->
             <div class="portfolio-item scale-in">
                 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=450&fit=crop" alt="E-commerce Platform">
                 <div class="portfolio-overlay">
@@ -806,7 +964,6 @@
                 </div>
             </div>
 
-            <!-- WEB PROJECT 3 -->
             <div class="portfolio-item scale-in">
                 <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=450&fit=crop" alt="Landing Page">
                 <div class="portfolio-overlay">
@@ -816,7 +973,6 @@
                 </div>
             </div>
 
-            <!-- WEB PROJECT 4 -->
             <div class="portfolio-item scale-in">
                 <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=450&fit=crop" alt="SaaS Dashboard">
                 <div class="portfolio-overlay">
@@ -828,7 +984,6 @@
         </div>
     </section>
 
-    <!-- RESULTS SECTION -->
     <section id="results">
         <div class="results-section fade-in">
             <h2>Real Results for Real Businesses</h2>
@@ -854,7 +1009,97 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
+    <!-- CLIENT CONFESSIONS SECTION -->
+    <section id="confessions">
+        <div class="confessions-section fade-in">
+            <h2>Client Confessions</h2>
+            <p class="section-subtitle">Real Clients, Real Stories</p>
+            <div class="confessions-grid">
+                <!-- Replace these with your actual client video embeds -->
+                <div class="confession-item scale-in">
+                    <iframe src="https://www.youtube.com/embed/YOUR_CLIENT_VIDEO_1" allowfullscreen></iframe>
+                    <div class="confession-overlay">
+                        <div class="confession-name">Sarah Mitchell</div>
+                        <div class="confession-company">TechGrow Solutions</div>
+                    </div>
+                </div>
+
+                <div class="confession-item scale-in">
+                    <iframe src="https://www.youtube.com/embed/YOUR_CLIENT_VIDEO_2" allowfullscreen></iframe>
+                    <div class="confession-overlay">
+                        <div class="confession-name">James Rodriguez</div>
+                        <div class="confession-company">Apex Real Estate</div>
+                    </div>
+                </div>
+
+                <div class="confession-item scale-in">
+                    <iframe src="https://www.youtube.com/embed/YOUR_CLIENT_VIDEO_3" allowfullscreen></iframe>
+                    <div class="confession-overlay">
+                        <div class="confession-name">Emily Chen</div>
+                        <div class="confession-company">Wellness Studio</div>
+                    </div>
+                </div>
+
+                <div class="confession-item scale-in">
+                    <iframe src="https://www.youtube.com/embed/YOUR_CLIENT_VIDEO_4" allowfullscreen></iframe>
+                    <div class="confession-overlay">
+                        <div class="confession-name">Michael Thompson</div>
+                        <div class="confession-company">Digital Marketing Pro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq">
+        <div class="faq-section fade-in">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything You Need to Know</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What sets Hashi Studio apart from traditional advertising agencies?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Unlike traditional agencies that rely solely on creative direction and manual processes, Hashi Studio combines cutting-edge AI technology with proven marketing strategies. We don't just create beautiful content—we build intelligent systems that work 24/7 to grow your business. Our AI-powered solutions automate repetitive tasks, analyze customer behavior in real-time, and optimize campaigns continuously, delivering results that scale far beyond what traditional methods can achieve. Plus, you work directly with me—no account managers, no delays, just fast, personalized service at a fraction of agency costs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly can I expect to see results from your services?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients see measurable improvements within the first 2-4 weeks. For AI chatbot integrations, you'll notice reduced support tickets immediately after launch. Web development projects typically show conversion rate improvements within the first month of going live. Video content often generates engagement and leads from day one. However, the best results come from our 90-day optimization cycle, where we continuously refine and improve based on real data. Unlike agencies that disappear after delivery, I stay engaged to ensure your investment keeps paying off.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need technical knowledge to work with AI solutions?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely not! That's the beauty of working with Hashi Studio—I handle all the technical complexity so you don't have to. I build AI solutions that are intuitive and easy to use, with simple dashboards and clear instructions. You'll get full training on how to use your new tools, and I provide ongoing support whenever you need it. Whether it's an AI chatbot, automated content system, or smart website features, everything is designed for business owners who want powerful technology without the headache. If you can send an email, you can use my solutions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's your pricing structure and what's included?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Every project is unique, so I offer custom pricing based on your specific needs and goals. Projects typically range from $1,500 to $10,000+ depending on complexity and scope. What's always included: dedicated one-on-one communication, unlimited revisions until you're 100% satisfied, post-launch support, and training on how to use everything I build. I also offer payment plans for larger projects. During our initial consultation (free), I'll provide a detailed proposal with transparent pricing, clear deliverables, and realistic timelines. No hidden fees, no surprises—just honest pricing for exceptional work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="testimonials fade-in">
         <h2>What Clients Say</h2>
         <p class="section-subtitle">Trusted by Growing Businesses</p>
@@ -883,7 +1128,6 @@
         </div>
     </section>
 
-    <!-- HIRE ME SECTION -->
     <section id="hire">
         <h2 class="fade-in">Let's Build Something Amazing</h2>
         <p class="section-subtitle fade-in">Choose Your Service</p>
@@ -906,7 +1150,7 @@
         </div>
         
         <form id="hireForm" class="fade-in" action="https://formsubmit.co/hashaam770@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New Project Inquiry - Portfolio">
+            <input type="hidden" name="_subject" value="New Project Inquiry - Hashi Studio">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="service" id="selectedService" value="">
@@ -980,9 +1224,8 @@
     </section>
 
     <footer class="fade-in">
-        <p>&copy; 2025 Hashaam. All Rights Reserved.</p>
+        <p>&copy; 2025 Hashi Studio. All Rights Reserved.</p>
         <div class="social-links">
-            <!-- REPLACE # with your actual social media URLs -->
             <a href="mailto:hashaam770@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             <a href="https://linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://youtube.com/@yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
@@ -991,7 +1234,6 @@
     </footer>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1005,7 +1247,6 @@
             });
         });
 
-        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -1015,16 +1256,17 @@
             }
         });
 
-        // Scroll animation observer
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
                 }
             });
         }, observerOptions);
@@ -1033,7 +1275,6 @@
             observer.observe(el);
         });
 
-        // Service selector
         const serviceOptions = document.querySelectorAll('.service-option');
         const selectedServiceInput = document.getElementById('selectedService');
 
@@ -1046,7 +1287,6 @@
             });
         });
 
-        // Form submission handling
         const form = document.getElementById('hireForm');
         form.addEventListener('submit', function(e) {
             const selectedService = document.getElementById('selectedService').value;
@@ -1057,7 +1297,6 @@
             }
         });
 
-        // Check if redirected back after form submission
         const urlParams = new URLSearchParams(window.location.search);
         if (window.location.hash === '#hire' && document.referrer.includes('formsubmit')) {
             document.getElementById('successMessage').style.display = 'block';
@@ -1066,7 +1305,6 @@
             }, 5000);
         }
 
-        // Hero parallax effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.getElementById('hero');
@@ -1076,7 +1314,6 @@
             }
         });
 
-        // Portfolio item hover effects
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         portfolioItems.forEach(item => {
             item.addEventListener('mouseenter', function() {
@@ -1084,6 +1321,21 @@
             });
             item.addEventListener('mouseleave', function() {
                 this.style.zIndex = '1';
+            });
+        });
+
+        // FAQ Accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
             });
         });
     </script>
